@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="#314A8E">
+
+    <TextView
+        android:layout_width="775px"
+        android:layout_marginTop="1dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/webName"
+        android:text="Websites"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#FFFFFF"
+        android:gravity="center"/>
+
+</LinearLayout>
