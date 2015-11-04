@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     UserDb userDb;
     Cursor cursor;
     ListAdapt listAdapt;
+    String websiteName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(listView);
         listAdapt = new ListAdapt(getApplicationContext(), R.layout.list_layout);
         listView.setAdapter(listAdapt);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                view.setSelected(true);
+            }
+        });
         userDb = new UserDb(getApplicationContext());
         sqLiteDatabase = userDb.getReadableDatabase();
         cursor = userDb.viewList(sqLiteDatabase);
@@ -62,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
         switch (item.getItemId())
         {
+            case R.id.id_edit:
+                Intent intent = new Intent(this, Edit.class);
+                this.startActivity(intent);
             case R.id.id_remove:
                 userDb = new UserDb(getApplicationContext());
                 sqLiteDatabase = userDb.getReadableDatabase();

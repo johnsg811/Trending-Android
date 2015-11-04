@@ -12,6 +12,7 @@
         android:text="Websites"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="#FFFFFF"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:background="@drawable/selector_colour"/>
 
 </LinearLayout>

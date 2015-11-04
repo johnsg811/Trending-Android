@@ -56,6 +56,15 @@ public class UserDb extends SQLiteOpenHelper{
         return cursor;
     }
 
+    public Cursor getWebsiteInfo(String FeedName, SQLiteDatabase sqLiteDatabase)
+    {
+        String[] projections = {NewsFeed.NewsFeedList.FeedName, NewsFeed.NewsFeedList.FeedURL};
+        String selection = NewsFeed.NewsFeedList.FeedName+" LIKE ?";
+        String[] selection_arg = {FeedName};
+        Cursor cursor = sqLiteDatabase.query(NewsFeed.NewsFeedList.TableName,projections,selection,selection_arg,null,null,null);
+        return cursor;
+    }
+
     public void deleteRow(String FeedName, SQLiteDatabase sqLiteDatabase)
     {
         String selection = NewsFeed.NewsFeedList.FeedName+" LIKE ?";
