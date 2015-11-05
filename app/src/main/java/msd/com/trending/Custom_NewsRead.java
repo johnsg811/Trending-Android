@@ -30,11 +30,20 @@ public class Custom_NewsRead extends AppCompatActivity {
         webView.setWebViewClient(new MyWebViewClient());
         openUrl();
 
+        /*String url = "https://www.google.com/";
+        WebView view = (WebView) this.findViewById(R.id.webView1);
+        view.getSettings().setJavaScriptEnabled(true);
+        view.loadUrl(url);*/
+
+
+        //WebView webView = (WebView) findViewById(R.id.webView1);
+        //webView.loadUrl("http://www.bbc.com");
+
     }
 
     private void openUrl()
     {
-        webView.loadUrl("https://www.bbc.com");
+        webView.loadUrl("https://www.independent.ie/");
         webView.requestFocus();
     }
 
