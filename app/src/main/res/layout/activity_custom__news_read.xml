@@ -10,4 +10,12 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/webView1" />
+
+    <ProgressBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        />
+
 </RelativeLayout>

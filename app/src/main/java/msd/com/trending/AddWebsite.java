@@ -27,10 +27,10 @@ public class AddWebsite extends AppCompatActivity {
 
     }
 
-   /* public void onClick(View v)
+    public void onClick(View v)
     {
         finish();
-    }*/
+    }
 
     public void addNewWebsite(View view)
     {
