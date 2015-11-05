@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="msd.com.trending" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +25,10 @@
         <activity
             android:name=".Edit"
             android:label="@string/title_activity_edit" >
+        </activity>
+        <activity
+            android:name=".Custom_NewsRead"
+            android:label="@string/title_activity_custom__news_read" >
         </activity>
     </application>
 

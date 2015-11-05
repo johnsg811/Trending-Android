@@ -13,6 +13,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.app.Activity;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ListView listView;
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Cursor cursor;
     ListAdapt listAdapt;
     String websiteName;
+    WebView webview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent launchNews = new Intent(MainActivity.this, Custom_NewsRead.class);
+                startActivity(launchNews);
                 view.setSelected(true);
             }
         });
@@ -54,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
             }while(cursor.moveToNext());
         }
 
-
     }
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {

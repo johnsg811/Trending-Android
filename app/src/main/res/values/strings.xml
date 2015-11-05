@@ -8,4 +8,5 @@
     <string name="edit">Edit</string>
     <string name="remove">Remove</string>
     <string name="title_activity_edit">Edit</string>
+    <string name="title_activity_custom__news_read">Custom_NewsRead</string>
 </resources>
