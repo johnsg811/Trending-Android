@@ -43,7 +43,7 @@ public class Custom_NewsRead extends AppCompatActivity {
 
     private void openUrl()
     {
-        webView.loadUrl("https://www.independent.ie/");
+        webView.loadUrl("https://www.independent.ie");
         webView.requestFocus();
     }
 
