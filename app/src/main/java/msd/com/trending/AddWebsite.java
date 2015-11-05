@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class AddWebsite extends AppCompatActivity {
     EditText WebsiteName, WebsiteURL;
@@ -26,10 +27,10 @@ public class AddWebsite extends AppCompatActivity {
 
     }
 
-    public void onClick(View v)
+   /* public void onClick(View v)
     {
         finish();
-    }
+    }*/
 
     public void addNewWebsite(View view)
     {
@@ -40,6 +41,8 @@ public class AddWebsite extends AppCompatActivity {
         userDb.addWebsites(WebName,WebUrl,sqLiteDatabase);  //add one row of data to database
         Toast.makeText(getBaseContext(), "Data Svaed", Toast.LENGTH_LONG).show();
         userDb.close(); //close database
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
     }
 
     @Override
