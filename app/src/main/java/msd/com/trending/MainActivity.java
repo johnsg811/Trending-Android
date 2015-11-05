@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.id_edit:
                 Intent intent = new Intent(this, Edit.class);
                 this.startActivity(intent);
+                break;
             case R.id.id_remove:
                 userDb = new UserDb(getApplicationContext());
                 sqLiteDatabase = userDb.getReadableDatabase();
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onContextItemSelected(item);
         }
+        return super.onContextItemSelected(item);
 
     }
 
