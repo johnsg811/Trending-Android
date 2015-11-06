@@ -24,6 +24,7 @@ public class Edit extends AppCompatActivity {
     public void onClick(View v)
     {
         finish();
+        overridePendingTransition(R.anim.leftopp_animation, R.anim.rightopp_animation);
     }
 
 

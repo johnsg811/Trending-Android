@@ -30,7 +30,9 @@ public class AddWebsite extends AppCompatActivity {
     public void onClick(View v)
     {
         finish();
+        overridePendingTransition(R.anim.leftopp_animation, R.anim.rightopp_animation);
     }
+
 
     public void addNewWebsite(View view)
     {
@@ -38,10 +40,11 @@ public class AddWebsite extends AppCompatActivity {
         String WebUrl = WebsiteURL.getText().toString();
         userDb = new UserDb(context);    //initalize userDb
         sqLiteDatabase = userDb.getWritableDatabase();  //initalize sqlitedatabase
-        userDb.addWebsites(WebName,WebUrl,sqLiteDatabase);  //add one row of data to database
+        userDb.addWebsites(WebName, WebUrl, sqLiteDatabase);  //add one row of data to database
         Toast.makeText(getBaseContext(), "Data Svaed", Toast.LENGTH_LONG).show();
         userDb.close(); //close database
         Intent intent = new Intent(this, MainActivity.class);
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
         this.startActivity(intent);
     }
 

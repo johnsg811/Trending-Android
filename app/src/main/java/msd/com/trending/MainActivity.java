@@ -1,8 +1,11 @@
 package msd.com.trending;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -31,6 +34,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*if(CheckNetwork.isInternetAvailable(MainActivity.this)) //returns true if internet available
+        {
+
+            //do something. loadwebview.
+        }
+        else
+        {
+            Toast.makeText(MainActivity.this,"No Internet Connection",Toast.LENGTH_LONG).show();
+        }*/
+
         listView = (ListView) findViewById(R.id.listView);
         registerForContextMenu(listView);
         listAdapt = new ListAdapt(getApplicationContext(), R.layout.list_layout);
@@ -79,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.id_edit:
                 Intent intent = new Intent(this, Edit.class);
                 this.startActivity(intent);
+                overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
                 break;
             case R.id.id_remove:
                 userDb = new UserDb(getApplicationContext());
@@ -95,9 +110,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClick(View v)
+    public void onClick1(View v)
     {
         startActivity(new Intent(MainActivity.this, AddWebsite.class));
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
     }
 
     @Override
